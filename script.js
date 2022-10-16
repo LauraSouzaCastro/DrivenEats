@@ -37,3 +37,4 @@ function verifica(){
         botao.innerHTML = "Fechar pedido";
     }
 }
+
