@@ -38,35 +38,22 @@ function verificar(){
         verifica = 1;
     }
 }
+function converte(valorString){
+    let valorConvertido = "";
+    for(let i = 3; i < valorString.length; i++){
+        if(valorString[i] == ","){
+            valorConvertido += ".";
+        }else{
+            valorConvertido += valorString[i];
+        }
+    }
+    return Number(valorConvertido);
+}
 function finalizarPedido(){
     if(verifica != null){
-        let valorPratoConvertido = ""; 
-        let valorBebidaConvertido = "";
-        let valorSobremesaConvertido = "";
-        for(let i = 3; i < valorPrato.length; i++){
-            if(valorPrato[i] == ","){
-                valorPratoConvertido += ".";
-            }else{
-                valorPratoConvertido += valorPrato[i];
-            }
-        }
-        for(let i = 3; i < valorBebida.length; i++){
-            if(valorBebida[i] == ","){
-                valorBebidaConvertido += ".";
-            }else{
-                valorBebidaConvertido += valorBebida[i];
-            }
-        }
-        for(let i = 3; i < valorSobremesa.length; i++){
-            if(valorSobremesa[i] == ","){
-                valorSobremesaConvertido += ".";
-            }else{
-                valorSobremesaConvertido += valorSobremesa[i];
-            }
-        }
-        let valorPratoConvertidoNumber = Number(valorPratoConvertido);
-        let valorBebidaConvertidoNumber = Number(valorBebidaConvertido);
-        let valorSobremesaConvertidoNumber = Number(valorSobremesaConvertido);
+        let valorPratoConvertidoNumber = converte(valorPrato);
+        let valorBebidaConvertidoNumber = converte(valorBebida);
+        let valorSobremesaConvertidoNumber = converte(valorSobremesa);
         let valorTotal =  (valorPratoConvertidoNumber + valorBebidaConvertidoNumber + valorSobremesaConvertidoNumber).toFixed(2);
         valorTotal += "";
         let precoTotal = "";
@@ -77,8 +64,9 @@ function finalizarPedido(){
                 precoTotal += valorTotal[i];
             }
         }
-        let minhaString = `Olá, gostaria de fazer o pedido:\n- Prato: ${prato}\n- Bebida: ${bebida}\n- Sobremesa: ${sobremesa}\nTotal: R$ ${precoTotal}`;
+        let nome = prompt("Qual é o seu nome?");
+        let endereco = prompt("Qual é o seu endereco?");
+        let minhaString = `Olá, gostaria de fazer o pedido:\n- Prato: ${prato}\n- Bebida: ${bebida}\n- Sobremesa: ${sobremesa}\nTotal: R$ ${precoTotal}\n\nNome: ${nome}\nEndereço: ${endereco}`;
         window.location.href = `https://wa.me/5562996330374?text=${encodeURIComponent(minhaString)}`;
     }
 }
-
