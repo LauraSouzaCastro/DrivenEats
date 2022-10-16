@@ -101,21 +101,21 @@
                         <img class="imagem" src="./imagens/brigadeiro.webp">
                         <h4 data-test="food-title">Brigadeiro</h4>
                         <h5>Três brigadeiros</h5>
-                        <h6 data-test="food-price">R$ 9,90</h6>
+                        <h6 data-test="food-price">R$ 3,90</h6>
                         <ion-icon name="checkmark-circle" class="icone"></ion-icon>
                     </div>
                     <div class="item" onclick="selecionarSobremesa(this)" data-test="food-option">
                         <img class="imagem" src="./imagens/torta.webp">
                         <h4 data-test="food-title">Torta Holandesa</h4>
                         <h5>Pedaço 300 gramas</h5>
-                        <h6 data-test="food-price">R$ 11,90</h6>
+                        <h6 data-test="food-price">R$ 9,90</h6>
                         <ion-icon name="checkmark-circle" class="icone"></ion-icon>
                     </div>
                 </div>
             </div>
         </div>
         <div class="rodape">
-            <button class="botao" data-test="finish-button">Selecione os 3 itens <br> para fechar o pedido</button>
+            <button class="botao" onclick="finalizarPedido()" data-test="finish-button">Selecione os 3 itens <br> para fechar o pedido</button>
         </div>
         <script src="script.js"></script>
         <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
