@@ -115,7 +115,18 @@
             </div>
         </div>
         <div class="rodape">
-            <button class="botao" onclick="finalizarPedido()" data-test="finish-button">Selecione os 3 itens <br> para fechar o pedido</button>
+            <button class="botao" onclick="confirmarPedido()" data-test="finish-button">Selecione os 3 itens <br> para fechar o pedido</button>
+        </div>
+        <div class="fundo some">
+            <div class="confirma" data-test="confirmation-dialog">
+                <p class="titulo">Confirme seu pedido</p>
+                <div class="infoPrato"><span></span><span></span></div>
+                <div class="infoBebida"><span></span><span></span></div>
+                <div class="infoSobremesa"><span></span><span></span></div>
+                <div class="infoTotal"><span>TOTAL</span><span></span></div>
+                <button class="botaoConfirma" onclick="finalizarPedido()">Tudo certo, pode pedir!</button>
+                <div class="botaoCancela" onclick="cancelar()">Cancelar</div>
+            </div>
         </div>
         <script src="script.js"></script>
         <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
